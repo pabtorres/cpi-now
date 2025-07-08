@@ -15,5 +15,4 @@ class CPIColumns(Enum):
 class Countries(Enum):
     """Enum for the Countries columns."""
 
-    PERU = "Peru"
     COLOMBIA = "Colombia"
