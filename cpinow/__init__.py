@@ -30,6 +30,6 @@ def update(countries: list = None):
     for retriever in __retrievers__:
         if retriever.country in countries:
             logger.info(f"Updating {retriever.country} data...")
-            retriever.update()
+            retriever.launch()
             # replace the dataframe in the DF_CPI dictionary
             DF_CPI[retriever.country] = retriever.data

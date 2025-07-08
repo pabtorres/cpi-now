@@ -14,8 +14,9 @@ class ColombiaCPIRetriever(SeleniumDownloaderMixin):
     def __init__(self):
         self.site = "https://uba.banrep.gov.co/htmlcommons/SeriesHistoricas/precios-inflacion.html"
         self.local_file_path = SETTINGS.COLOMBIA_LOCAL_PATH.parent
-        self.attempts = 10
+        self.attempts = 1
         self.country = Countries.COLOMBIA.value
+        self.data = pd.read_csv(SETTINGS.COLOMBIA_LOCAL_PATH.as_posix())
 
     def launch(self):
         """Launches the retriever."""
@@ -28,10 +29,12 @@ class ColombiaCPIRetriever(SeleniumDownloaderMixin):
 
         if error:
             logger.error("Failed to download CPI file after multiple attempts.")
+            logger.info("Using the last downloaded file.")
             return None
         logger.info("CPI file downloaded successfully.")
 
         self.save(self.parse(f"{path}/colombia.xlsx"), f"{path}/colombia.csv")
+        self.data = pd.read_csv(f"{path}/colombia.csv")
 
     def download(self):
         download_dir = self.local_file_path
