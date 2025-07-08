@@ -1,12 +1,10 @@
-from pathlib import Path
-
 import pandas as pd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 from cpinow import SETTINGS, logger
-from cpinow.names import CPIColumns
+from cpinow.names import Countries, CPIColumns
 from cpinow.retrievers.base import SeleniumDownloaderMixin
 
 
@@ -17,7 +15,7 @@ class ColombiaCPIRetriever(SeleniumDownloaderMixin):
         self.site = "https://uba.banrep.gov.co/htmlcommons/SeriesHistoricas/precios-inflacion.html"
         self.local_file_path = SETTINGS.COLOMBIA_LOCAL_PATH.parent
         self.attempts = 10
-        self.country = "Colombia"
+        self.country = Countries.COLOMBIA.value
 
     def launch(self):
         """Launches the retriever."""
@@ -70,7 +68,7 @@ class ColombiaCPIRetriever(SeleniumDownloaderMixin):
             if not error:
                 logger.info(f"Downloaded CPI file saved at {downloaded_file}")
             else:
-                logger.warning(f"Corrupted file, didn't download the file")
+                logger.warning("Corrupted file, didn't download the file")
 
         finally:
             driver.quit()
@@ -124,6 +122,6 @@ class ColombiaCPIRetriever(SeleniumDownloaderMixin):
 
 if __name__ == "__main__":
     retriever = ColombiaCPIRetriever()
-    #retriever.launch()
+    # retriever.launch()
     path = SETTINGS.COLOMBIA_LOCAL_PATH.parent.as_posix()
     retriever.save(retriever.parse(f"{path}/colombia.xlsx"), f"{path}/colombia.csv")
