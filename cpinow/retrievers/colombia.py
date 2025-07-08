@@ -17,6 +17,7 @@ class ColombiaCPIRetriever(SeleniumDownloaderMixin):
         self.site = "https://uba.banrep.gov.co/htmlcommons/SeriesHistoricas/precios-inflacion.html"
         self.local_file_path = SETTINGS.COLOMBIA_LOCAL_PATH.parent
         self.attempts = 10
+        self.country = "Colombia"
 
     def launch(self):
         """Launches the retriever."""

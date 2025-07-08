@@ -27,9 +27,9 @@ def update(countries: list = None):
 
     if countries is None:
         countries = DF_CPI.keys()
-    for parser in __retrievers__:
-        if parser.country in countries:
-            logger.info(f"Updating {parser.country} data...")
-            parser.update()
+    for retriever in __retrievers__:
+        if retriever.country in countries:
+            logger.info(f"Updating {retriever.country} data...")
+            retriever.update()
             # replace the dataframe in the DF_CPI dictionary
-            DF_CPI[parser.country] = parser.data
+            DF_CPI[retriever.country] = retriever.data
