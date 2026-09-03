@@ -7,7 +7,7 @@ maintainers = ["Pablo Felipe Torres"]
 
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.11"
+python = ">=3.9,<3.13"
 structlog = "*"
 python-dotenv = "*"
 pandas = "*"
