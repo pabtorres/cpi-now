@@ -14,6 +14,26 @@ Available countries:
 ```python
 pip install cpinow
 ```
+
+## Develop & Contribute
+
+### Locally
+```bash
+python -m venv .venv
+poetry update
+```
+
+### Branch Protocol
+
+- Create a feature branch, merge it to dev
+- Merge dev to main
+- Generate a Release branch vYYYY.MM.DD
+```bash
+git tag vYYYY.MM.DD
+git push origin vYYYY.MM.DD
+```
+
+
 ## Usage
 ```python
 from cpinow import DF_CPI
