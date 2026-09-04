@@ -4,10 +4,10 @@
 import logging
 from enum import Enum, IntEnum
 from pathlib import Path
-from typing import Optional
+from typing import ClassVar, Optional
 
 from dotenv import find_dotenv, load_dotenv
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 def init_dotenv():
@@ -71,13 +71,13 @@ class LogFormatter(Enum):
 class Settings(BaseSettings):
     """Project settings variables."""
 
-    PACKAGE_PATH = Path(__file__).parent
+    PACKAGE_PATH: ClassVar[Path] = Path(__file__).parent
     """Package path (python files)."""
 
-    PROJECT_PATH = PACKAGE_PATH.parent
+    PROJECT_PATH: ClassVar[Path] = PACKAGE_PATH.parent
     """Project path (all files)."""
 
-    LOG_PATH: Optional[Path]
+    LOG_PATH: Optional[Path] = None
     """Path to logfile, only works if ``LOG_DESTINATION=FILE``."""
 
     LOG_FORMAT: LogFormatter = LogFormatter.JSON.value
@@ -95,11 +95,7 @@ class Settings(BaseSettings):
     PERU_LOCAL_PATH: Path = Path(PACKAGE_PATH, "data", "peru.csv")
     """Path to local file with Peru CPI data."""
 
-    class Config:
-        """Inner configuration."""
-
-        env_prefix = "CPINOW_"
-        use_enum_values = True
+    model_config = SettingsConfigDict(env_prefix="CPINOW_", use_enum_values=True)
 
 
 def init_settings() -> Settings:
