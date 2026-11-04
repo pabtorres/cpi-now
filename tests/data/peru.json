@@ -1,0 +1,133 @@
+{
+ "config": {
+  "title": "Índice de precios Lima Metropolitana (índice Dic.2021 = 100)",
+  "series": [
+   {
+    "name": "Índice de precios Lima Metropolitana (índice Dic.2021 = 100) - Índice de Precios al Consumidor (IPC)",
+    "dec": "2"
+   }
+  ]
+ },
+ "periods": [
+  {
+   "name": "Nov.1990",
+   "values": [
+    "n.d."
+   ]
+  },
+  {
+   "name": "Dic.1990",
+   "values": [
+    "n.d."
+   ]
+  },
+  {
+   "name": "Ene.1991",
+   "values": [
+    "7.39298050571451"
+   ]
+  },
+  {
+   "name": "Feb.1991",
+   "values": [
+    "8.08955824767879"
+   ]
+  },
+  {
+   "name": "Mar.1991",
+   "values": [
+    "8.71246556304161"
+   ]
+  },
+  {
+   "name": "Abr.1991",
+   "values": [
+    "9.22127451195124"
+   ]
+  },
+  {
+   "name": "May.1991",
+   "values": [
+    "9.92567344330508"
+   ]
+  },
+  {
+   "name": "Jun.1991",
+   "values": [
+    "10.8447933418089"
+   ]
+  },
+  {
+   "name": "Jul.1991",
+   "values": [
+    "n.d."
+   ]
+  },
+  {
+   "name": "Ago.1991",
+   "values": [
+    "12.6832829707029"
+   ]
+  },
+  {
+   "name": "Sep.1991",
+   "values": [
+    "13.3884905818365"
+   ]
+  },
+  {
+   "name": "Oct.1991",
+   "values": [
+    "13.9175985764615"
+   ]
+  },
+  {
+   "name": "Nov.1991",
+   "values": [
+    "14.4687389736942"
+   ]
+  },
+  {
+   "name": "Dic.1991",
+   "values": [
+    "15.0098170510304"
+   ]
+  },
+  {
+   "name": "Abr.2026",
+   "values": [
+    "120.211509"
+   ]
+  },
+  {
+   "name": "May.2026",
+   "values": [
+    "120.017612"
+   ]
+  },
+  {
+   "name": "Jun.2026",
+   "values": [
+    "120.292167"
+   ]
+  },
+  {
+   "name": "Jul.2026",
+   "values": [
+    "120.635759"
+   ]
+  },
+  {
+   "name": "Ago.2026",
+   "values": [
+    "120.716351"
+   ]
+  },
+  {
+   "name": "Sep.2026",
+   "values": [
+    "120.85795"
+   ]
+  }
+ ]
+}

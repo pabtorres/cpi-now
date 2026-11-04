@@ -1,6 +1,6 @@
 [tool.poetry]
 name ="cpinow"
-version = "2026.9.3"
+version = "2026.9.4"
 description = "cpi-now is a Python library designed to simplify the retrieval of Consumer Price Index (CPI) values from the central banks of countries"
 authors = ["Pablo Felipe Torres"]
 maintainers = ["Pablo Felipe Torres"]

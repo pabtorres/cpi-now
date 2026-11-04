@@ -16,3 +16,4 @@ class Countries(Enum):
     """Enum for the Countries columns."""
 
     COLOMBIA = "Colombia"
+    PERU = "Peru"
