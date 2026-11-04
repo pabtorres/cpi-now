@@ -8,7 +8,8 @@
 
 
 Available countries:
-- Colombia 🇨🇴
+- Colombia 🇨🇴 — Banco de la República (Selenium).
+- Perú 🇵🇪 — BCRP, series `PN38705PM` (IPC Lima Metropolitana, Dic.2021 = 100), via the BCRP statistics API.
 
 ## Installation
 ```python
@@ -40,14 +41,28 @@ from cpinow import DF_CPI
 
 # Retrieve CPI data for Colombia
 print(DF_CPI["Colombia"])
+
+# Retrieve CPI data for Peru (keys are case-insensitive, so DF_CPI["peru"] also works, as in cpilatam)
+print(DF_CPI["Peru"])
+```
+
+### Migrating from `cpilatam`
+`DF_CPI["peru"]` returns the same columns (`date`, `cpi`, `reference_date`) and values as `cpilatam`, so only the
+import has to change:
+```python
+# from cpilatam import DF_CPI
+from cpinow import DF_CPI
+
+df_inflation = DF_CPI["peru"]
 ```
 ## Update CPI Data
 Keep your CPI data up-to-date by using the following update function:
 ```python
 from cpinow import update
-update()
+update()           # all countries
+update(["Peru"])   # only Peru (no Selenium/browser needed)
 ```
 ### Notes:
 - Ensure you have an active internet connection for successful data retrieval.
-- The library is currently designed to support data from Colombia only. Future updates may include additional countries.
+- The library currently supports data from Colombia and Peru. Future updates may include additional countries.
 - For the latest features and improvements, check the GitHub repository.
