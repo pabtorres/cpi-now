@@ -8,7 +8,7 @@ from cpinow.names import Countries, CPIColumns
 from cpinow.settings import init_settings
 
 __app_name__ = "cpinow"
-__version__ = "2025.7.8"
+__version__ = "2026.11.4"
 
 SETTINGS = init_settings()
 logger = configure_logging(__app_name__ + " - v" + __version__, SETTINGS, kidnap_loggers=True)
